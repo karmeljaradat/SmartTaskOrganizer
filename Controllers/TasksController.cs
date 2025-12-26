@@ -15,21 +15,14 @@ namespace TaskWebApp.Api.Controllers
             _service = service;
         }
 
-        [HttpPost]
-        public IActionResult Create([FromBody] TaskItem task)
+        [HttpPut("{id}")]
+        public IActionResult Update(Guid id, [FromBody] TaskItem task)
         {
-            if (string.IsNullOrWhiteSpace(task.Title))
-                return BadRequest("Title is required");
+            var updated = _service.Update(id, task);
+            if (updated == null)
+                return NotFound();
 
-            var created = _service.Create(task);
-            return CreatedAtAction(nameof(GetAll), new { id = created.Id }, created);
-        }
-
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            return Ok(_service.GetAll());
+            return Ok(updated);
         }
     }
 }
-
