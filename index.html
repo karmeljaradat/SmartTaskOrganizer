@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Organizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login & Signup Section -->
+<div class="auth-container" id="authContainer">
+    <div id="loginForm" class="auth-box">
+        <h2>تسجيل الدخول 🔑</h2>
+        <input type="text" id="loginUsername" placeholder="اسم المستخدم">
+        <input type="password" id="loginPassword" placeholder="كلمة المرور">
+        <button onclick="login()">تسجيل الدخول</button>
+        <p>لا تملك حساب؟ <span class="link" onclick="showSignup()">إنشاء حساب</span></p>
+    </div>
+
+    <div id="signupForm" class="auth-box" style="display:none;">
+        <h2>إنشاء حساب 📝</h2>
+        <input type="text" id="signupUsername" placeholder="اسم المستخدم">
+        <input type="password" id="signupPassword" placeholder="كلمة المرور">
+        <button onclick="signup()">إنشاء الحساب</button>
+        <p>لديك حساب بالفعل؟ <span class="link" onclick="showLogin()">تسجيل الدخول</span></p>
+    </div>
+</div>
+
+<!-- Main Container (Tasks, Dashboard) -->
+<div class="container" id="mainContainer" style="display:none;">
+    <header>
+        <h1>مرحباً <span id="currentUserName"></span>! 🎉</h1>
+        <p>كيف حالك اليوم؟ هل أنت جاهز لتنظيم يومك وتدوين مهامك؟</p>
+        <button class="logout-btn" onclick="logout()">تسجيل الخروج 🚪</button>
+    </header>
+
+    <main>
+        <div class="new-task">
+            <h2>أضف مهمة جديدة</h2>
+            <input type="text" id="title" placeholder="عنوان المهمة">
+            <textarea id="description" placeholder="وصف المهمة"></textarea>
+            <input type="date" id="deadline">
+            <select id="priority">
+                <option value="High">عالية 🔴</option>
+                <option value="Medium">متوسطة 🟠</option>
+                <option value="Low">منخفضة 🟢</option>
+            </select>
+            <button onclick="addTask()">أضف المهمة ➕</button>
+            <button onclick="clearTasks()">مسح جميع المهام 🧹</button>
+            <button onclick="exportTasks()">تصدير المهام 📄</button>
+        </div>
+
+        <div class="tasks-list">
+            <h2>قائمة المهام</h2>
+            <table id="tasksTable">
+                <thead>
+                    <tr>
+                        <th>العنوان</th>
+                        <th>الوصف</th>
+                        <th>الموعد النهائي</th>
+                        <th>الأولوية</th>
+                        <th>الحالة</th>
+                        <th>أزرار</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="dashboard">
+            <h2>Dashboard 📊</h2>
+            <p>المستخدم الحالي: <span id="displayUser"></span></p>
+            <p>عدد المهام الكلي: <span id="totalTasks">0</span></p>
+            <p>المهام المكتملة: <span id="completedTasks">0</span></p>
+            <p>المهام المتبقية: <span id="pendingTasks">0</span></p>
+        </div>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+

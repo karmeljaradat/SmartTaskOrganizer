@@ -1,0 +1,134 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #d627d4);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------- Auth -------- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-box {
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    width: 300px;
+    text-align: center;
+}
+
+.auth-box input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9em;
+}
+
+.auth-box button {
+    width: 95%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: transform 0.2s;
+}
+
+.auth-box button:hover {
+    transform: scale(1.05);
+}
+
+/* -------- Main -------- */
+.link {
+    color: #ffd700;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.logout-btn {
+    background: #ff4c4c;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.logout-btn:hover {
+    transform: scale(1.1);
+}
+
+.new-task, .tasks-list, .dashboard {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.tasks-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tasks-list th, .tasks-list td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+
+.tasks-list tr:nth-child(even) {
+    background: rgba(255,255,255,0.2);
+}
