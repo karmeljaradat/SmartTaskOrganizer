@@ -30,4 +30,14 @@ app.MapControllers();
 
 app.Run();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReact",
+        policy => policy
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
+app.UseCors("AllowReact");
 
