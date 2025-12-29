@@ -1,5 +1,4 @@
 # SmartTaskOrganizer
-# Smart Task Organizer
 
 ## Project Description
 Smart Task Organizer is a task management application designed to help users organize and manage their daily tasks efficiently.  
